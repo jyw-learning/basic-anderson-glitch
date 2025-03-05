@@ -162,7 +162,7 @@ body.dark-mode .flip-card-back{
     background-color: #3a3a3a;
 }
 body.dark-mode .flip-card-back p{
-    color: #ccc;
+    color: #fff;
 }
 
 /* ---------------- 響應式版面調整 ---------------- */
