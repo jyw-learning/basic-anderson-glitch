@@ -53,6 +53,10 @@ p {
     text-decoration: underline;
 }
 
+.text h1{
+    color: #333;
+}
+
 /* ---------------- 翻轉卡片效果 ---------------- */
 .flip-card {
     width: 360px;
@@ -152,6 +156,9 @@ body.dark-mode .profile-card h2 {
 body.dark-mode .profile-card p {
     color: #ccc;
 }
+body.dark-mode .text h2{
+    color: #fff;
+}
 body.dark-mode .theme-toggle-btn {
     background-color: #525151;
     color: #fff;
@@ -180,4 +187,16 @@ body.dark-mode .flip-card-back p{
         margin: 5px auto;
     }
 }
+
+
+@keyframes fadeIn{
+    0% {opacity: 0;}
+    100% {opacity: 1;}
+} 
+.text h1{
+    font-size: 24px;
+    font-weight: bold;
+    animation: fadeIn 2s ease-in-out;
+}
+
 
