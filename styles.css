@@ -153,7 +153,7 @@ body.dark-mode .profile-card p {
     color: #ccc;
 }
 body.dark-mode .theme-toggle-btn {
-    background-color: #444;
+    background-color: #525151;
     color: #fff;
 }
 body.dark-mode .theme-toggle-btn:hover {
@@ -174,6 +174,10 @@ body.dark-mode .flip-card-back p{
     .profile-card {
         width: 90%;
         margin: 10px auto;
+    }
+    .theme-toggle-btn{
+        width: 10%;
+        margin: 5px auto;
     }
 }
 
