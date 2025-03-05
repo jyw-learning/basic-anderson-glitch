@@ -17,7 +17,7 @@ body {
     margin: 0 auto;
 }
 
-h1, h3 {
+h1 {
     text-align: center;
     color: #333;
 }
@@ -49,10 +49,6 @@ p {
     color: #333;
 }
 
-.profile-card a {
-    color: #0ABAB5;
-    text-decoration: none;
-}
 .profile-card a:hover {
     text-decoration: underline;
 }
@@ -105,6 +101,10 @@ p {
     text-align: center;
 }
 
+.flip-card-back p{
+    color : #333;
+}
+
 /* 將圖片調整為填滿容器 */
 .profile-img {
     width: 100%;
@@ -129,6 +129,10 @@ p {
     background-color: #07827F;
 }
 
+.theme-toggle-btn{
+    color: #333;
+}
+
 /* ---------------- 暗黑模式 ---------------- */
 body.dark-mode {
     background: linear-gradient(135deg, #2e2e2e, #4e4e4e);
@@ -148,12 +152,9 @@ body.dark-mode .profile-card h2 {
 body.dark-mode .profile-card p {
     color: #ccc;
 }
-body.dark-mode .profile-card a {
-    color: #c9b6f8;
-}
 body.dark-mode .theme-toggle-btn {
     background-color: #444;
-    color: #c9b6f8;
+    color: #fff;
 }
 body.dark-mode .theme-toggle-btn:hover {
     background-color: #555;
