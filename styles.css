@@ -1,14 +1,172 @@
+/* --------------- 預設 (亮色模式) --------------- */
 body {
-    background-color: #f4f4f9;
-    font-family: 'Helvetica', sans-serif;
+    margin: 0;
+    padding: 20px;
+    font-family: sans-serif;
+    background: linear-gradient(135deg, #0ABAB5, #e5dffb);
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
 }
 
-h1 {
-    color: #333;
+.container {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+h1, h3 {
     text-align: center;
+    color: #333;
 }
 
 p {
-    color: #666;
-    line-height: 1.5;
+    text-align: center;
+    color: #555;
 }
+
+/* ---------------- 個人卡片區塊 ---------------- */
+.profile-card {
+    background-color: #fff;
+    width: 800px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    text-align: center;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.profile-card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.profile-card h2 {
+    margin: 10px 0 5px;
+    color: #333;
+}
+
+.profile-card a {
+    color: #0ABAB5;
+    text-decoration: none;
+}
+.profile-card a:hover {
+    text-decoration: underline;
+}
+
+/* ---------------- 翻轉卡片效果 ---------------- */
+.flip-card {
+    width: 360px;
+    height: 360px;
+    perspective: 1000px; /* 產生 3D 效果 */
+    margin: 0 auto 20px;
+}
+
+.flip-card-inner {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: transform 0.8s;
+    transform-style: preserve-3d;
+    transform-origin: center; /* 以中心為翻轉原點 */
+}
+
+.flip-card.flipped .flip-card-inner {
+    transform: rotateY(180deg);
+}
+
+.flip-card-front,
+.flip-card-back {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    box-sizing: border-box; /* 包含邊框與 padding 在內 */
+    backface-visibility: hidden;
+    border-radius: 50%; /* 保持圓形外觀 */
+}
+
+.flip-card-front {
+    border: 4px solid #00008B;
+}
+
+.flip-card-back {
+    background-color: #fff;
+    border: 4px solid #00008B;
+    transform: rotateY(180deg);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 10px; /* 如有需要，可調整或移除 padding 以符合您的設計 */
+    color: #333;
+    font-size: 18px;
+    text-align: center;
+}
+
+/* 將圖片調整為填滿容器 */
+.profile-img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    border-radius: inherit;
+}
+
+/* ---------------- 切換按鈕 ---------------- */
+.theme-toggle-btn {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    padding: 8px 16px;
+    border: none;
+    border-radius: 5px;
+    background-color: #089591;
+    color: #fff;
+    cursor: pointer;
+}
+.theme-toggle-btn:hover {
+    background-color: #07827F;
+}
+
+/* ---------------- 暗黑模式 ---------------- */
+body.dark-mode {
+    background: linear-gradient(135deg, #2e2e2e, #4e4e4e);
+}
+body.dark-mode h1,
+body.dark-mode h3,
+body.dark-mode p {
+    color: #ddd;
+}
+body.dark-mode .profile-card {
+    background-color: #3a3a3a;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+}
+body.dark-mode .profile-card h2 {
+    color: #fff;
+}
+body.dark-mode .profile-card p {
+    color: #ccc;
+}
+body.dark-mode .profile-card a {
+    color: #c9b6f8;
+}
+body.dark-mode .theme-toggle-btn {
+    background-color: #444;
+    color: #c9b6f8;
+}
+body.dark-mode .theme-toggle-btn:hover {
+    background-color: #555;
+}
+
+/* ---------------- 響應式版面調整 ---------------- */
+@media (max-width: 600px) {
+    body {
+        padding: 10px;
+    }
+    .profile-card {
+        width: 90%;
+        margin: 10px auto;
+    }
+}
+

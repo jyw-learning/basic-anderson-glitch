@@ -1,11 +1,67 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-    <title>外部樣式範例</title>
-    <link rel="stylesheet" href="styles.css">
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>個人介紹網站</title>
+  <!-- 連結外部 CSS -->
+  <link rel="stylesheet" href="styles.css">
+
+  <!-- Polyfill (若需要) -->
+  <script type="text/javascript" src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+
+  <!-- MathJax (公式渲染) -->
+  <script type="text/javascript" id="MathJax-script" async
+    src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
 </head>
 <body>
-    <h1>外部樣式範例</h1>
-    <p>這是一段文字，應用於外部樣式。</p>
+  <!-- 切換深色模式按鈕 -->
+  <button id="theme-toggle" class="theme-toggle-btn">切換深色模式</button>
+
+  <!-- 網站標題 -->
+  <h1>歡迎來到我的網站！</h1>
+  <p>這是我的第一個網站，美感不足請見諒。</p>
+
+  <!-- 個人卡片區塊 -->
+  <div class="profile-card">
+      <!-- 翻轉卡片容器，點擊後切換翻轉效果 -->
+      <div class="flip-card" onclick="this.classList.toggle('flipped');">
+          <div class="flip-card-inner">
+              <!-- 正面：顯示圖片 -->
+              <div class="flip-card-front">
+                  <img src="photo.jpg" alt="個人照片" class="profile-img">
+              </div>
+              <!-- 背面：顯示文字 -->
+              <div class="flip-card-back">
+                  <p>考得沒臉見人了(´;ω;`)<br>求求台科爸爸收留我</p>
+              </div>
+          </div>
+      </div>
+      <!-- 其餘個人資訊 -->
+      <h2>⭡</h2>
+      <h2>頭像可以點擊喔~</h2>
+      <h2>王奕翔</h2>
+      <h2>電機大四 11028140</h2>
+      <p>聯絡方式: yisiang.es.wang@gmail.com</p>
+      <p>小的怕生，非請勿擾</p>
+  </div>
+
+  <!-- 主題切換腳本 -->
+  <script>
+    // 1. 若之前已記錄使用者的主題偏好，先載入
+    if (localStorage.getItem('theme') === 'dark') {
+      document.body.classList.add('dark-mode');
+    }
+
+    // 2. 監聽按鈕點擊，切換 dark-mode
+    document.getElementById('theme-toggle').addEventListener('click', function() {
+      document.body.classList.toggle('dark-mode');
+      if (document.body.classList.contains('dark-mode')) {
+        localStorage.setItem('theme', 'dark');
+      } else {
+        localStorage.setItem('theme', 'light');
+      }
+    });
+  </script>
 </body>
 </html>
